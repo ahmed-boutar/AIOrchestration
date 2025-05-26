@@ -3,3 +3,5 @@ AI Orchestration mini project using AWS S3, Lambdas, step functions, and cloudwa
 
 
 ## Overview 
+
+![Architecture Diagram](images/SystemDesignDiagram.png)
