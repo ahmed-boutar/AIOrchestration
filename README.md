@@ -23,6 +23,7 @@ The workflow is defined in Amazon States Language (ASL). Below is a simplified b
 - **Failure**: Centralized failure handler after retries are exhausted
 
 ## Project Structure 
+```
 AIOrchestration
 ├── images/                 # contains the diagram
 ├── src/
@@ -41,6 +42,7 @@ AIOrchestration
 ├── samconfig.toml                      # File generating after building with AWS SAM
 ├── template.yaml                       # AWS SAM template
 └── .gitignore
+```
 
 ## Monitoring & Logging
 - All Lambda functions log events to Amazon CloudWatch Logs with a unique requestId.
