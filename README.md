@@ -9,7 +9,7 @@ This project implements an orchestrated AI pipeline using **AWS Step Functions**
 ## Architecture
 
 ### High-Level Workflow
-![The Architecture Diagram](images/SystemDesignDiagram.png)
+![The Architecture Diagram](images/SystemsDesignDiagram.png)
 
 ## State Machine Definition
 
