@@ -11,7 +11,6 @@ This project implements an orchestrated AI pipeline using **AWS Step Functions**
 ### High-Level Workflow
 ![Architecture Diagram](images/SystemDesignDiagram.png)
 
-
 ## State Machine Definition
 
 The workflow is defined in Amazon States Language (ASL). Below is a simplified breakdown:
