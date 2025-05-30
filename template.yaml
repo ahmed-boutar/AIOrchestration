@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  DataIngestionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: data_ingestion
+      Handler: data_ingestion.lambda_handler
+      Runtime: python3.9
+      CodeUri: src/data_ingestion/
+      Timeout: 60
+      MemorySize: 512
+      Policies:
+        - S3ReadPolicy:
+            BucketName: ml-orchestration-bucket
+
+  PreprocessDataFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: preprocess_data
+      Handler: preprocess_data.lambda_handler
+      Runtime: python3.9
+      CodeUri: src/preprocess_data/
+      Timeout: 300
+      MemorySize: 1024
+      Policies:
+        - S3ReadPolicy:
+            BucketName: ml-orchestration-bucket
+        - S3WritePolicy:
+            BucketName: ml-orchestration-bucket
+
+  SentimentAnalysisFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: sentiment_analysis
+      Handler: sentiment_analysis.lambda_handler
+      Runtime: python3.9
+      CodeUri: src/sentiment_analysis/
+      Timeout: 300
+      MemorySize: 1024
+      Policies:
+        - S3ReadPolicy:
+            BucketName: ml-orchestration-bucket
+        - S3WritePolicy:
+            BucketName: ml-orchestration-bucket
